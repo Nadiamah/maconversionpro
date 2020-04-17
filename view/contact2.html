@@ -1,0 +1,64 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div id="actualites" class="container">
+    <h1>Me contacter</h1>
+</div>
+
+<section class="container-fluid contactPage">
+    <div class="container py-5">
+        <div class="row">
+
+            <div class="col-12 sm-12 md-6">
+                <div class="card bg-light cardForm">
+                    <div class="card-body">
+                        <h2>Contactez-nous</h2>
+                        <p class="p1">Pour plus de renseignement, merci de nous envoyer un message via ce formulaire</p>
+                        <form>
+
+                            <div class="form-group">
+                                <label for="validationDefault01">Nom</label>
+                                <input type="text" class="form-control" id="validationDefault01" placeholder="Nom"
+                                       value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="validationDefault02">Prénom</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="Prénom"
+                                       value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="validationDefault03">Email</label>
+                                <input type="text" class="form-control" id="validationDefault03" placeholder="Email"
+                                       value="" required>
+                                <div class="input-group">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Votre message</label>
+                                <textarea class="form-control" required="" name="message" id="message" rows="5"
+                                          cols="50" placeholder="Composez votre texte !"></textarea>
+                                <div class="invalid-tooltip">
+                                    Merci de rédiger votre message.
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
+                                           required>
+                                    <label class="form-check-label" for="invalidCheck2"></label>
+                                    Accepter les conditions
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Envoyer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet"  type="text/css" href="public/front/assets/bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <script src="public/front/assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="public/front/assets/js/popper.min.js"></script>
+    <script src="public/front/assets/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    <link href="public/front/assets/css/all.css"  type="text/css" rel="stylesheet">
+    <link href="public/front/assets/css/styles.css"  type="text/css" rel="stylesheet">
+    <title>Actualités</title>
+    <title>Le Festival du film en plein air</title>
+</head>
+<body class="bg-contact">
+{ % block header %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-dark fixed-top">
+        <a class="navbar-brand" href="accueil.html">Les films de plein air</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=accueil2">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=posts2">Posts</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=films2">Films</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=inscription2">Inscription</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=contact2">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+{ % block content %}
+<!--<section id="festival">
+    <div class="container">
+        <div class="row-xs-2" id="titre1">Bienvenue au<br>Festival du film plein air<br>Parc Monceau-Paris
+        </div>
+
+        <div class="row text-center">
+        </div>
+    </div>
+</section>-->
+{% block content %}{% endblock %}
+
+<footer class="page-footer font-small blue pt-4">
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+        <!-- Grid row -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-4 mt-md-0 mt-3">
+                <!-- Content -->
+                <h5 class="">Association
+                    Les Films de Plein Air
+                </h5>
+                <p>Du cinéma plein les yeux!<br>Adresse: 7 rue du Paradis 75008 Paris<br>Téléphone: 01.43.74.83.54</p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <!-- Grid column -->
+            <div class="col-md-4 mb-md-0 mb-3">
+                <!-- Links -->
+                <h3 class="">Liens des pages</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="accueil2.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="posts2.html">Posts</a>
+                    </li>
+                    <li>
+                        <a href="films2.html">Films</a>
+                    </li>
+                    <li>
+                        <a href="inscription2.html">Inscriptions</a>
+                    </li>
+                    <li>
+                        <a href="contact2.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 mb-md-0 mb-3">
+
+                <!-- Links -->
+                <h3 class="">Trouvez-nous aussi sur</h3>
+                <a class="lien1" href="#" class="btn btn-facebook"><i
+                        class="fab fa-facebook"></i></a>
+                <a class="lien2" href="#" class="btn btn-instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a class="lien3" href="#" class="btn btn-instagram"><i
+                        class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+    </div>
+    <!-- Footer Links -->
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> Association Les Films de Plein Air-</a>
+        <a href="https://donnees-rgpd.fr/politique-de-confidentialite/">Politique de confidentialité-</a>
+        <a href="https://donnees-rgpd.fr/mentions-legales/">Mentions-Légales</a>
+
+    </div>
+    <!-- Copyright -->
+    <!--<div>-->
+    <!-- Footer -->
+    <div class="cookie-ban">
+        En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de Cookies pour réaliser des
+        statistiques de visites.
+        <button id="btn-ok" type="button" class="btn btn-primary btn-sm">OK</button>
+    </div>
+    <!--</div>-->
+</footer>
+
+</body>
+</html>
