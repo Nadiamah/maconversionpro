@@ -1,0 +1,182 @@
+/* GENERAL */
+
+h1{
+    text-align: center;
+    color: gold;
+    font-size: 50px;
+    font-family: 'Great Vibes', cursive;
+}
+h5{
+    margin-left: 10px;
+}
+p{
+    margin-left: 10px;
+    font-style: italic;
+}
+
+/* HEADER */
+.nav-item{
+    color: gold;
+}
+.nav-link{
+    color: gold;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    float: left;
+}
+.navbar{
+    background-color: black;    
+}
+.navbar title{
+    font-size: 45px;
+    color: gold;
+    font-family: fantasy;
+}
+
+/* FESTIVAL */
+#festival{
+    font-size: 25px;
+    text-align: center;
+    padding: 50px;  
+}
+
+#titre1{
+    padding-top: 5%;
+    padding-bottom: 25%;
+    color: gold;
+    font-size: 1em;
+    font-size: 50px;
+    font-family: 'Great Vibes', cursive;
+}
+
+body {
+    font-family: 'Hind', cursive;
+}
+/******* container*****/
+/*****page actualité-films-inscription-contact***/
+.container h1{
+    text-align: center;
+    padding-bottom: 40px;
+}
+#actualites{
+    padding-top: 70px;
+}
+/******** contact **********/
+.p1{
+    text-align: center;
+}
+.paragraphe{
+    text-transform: uppercase;
+    font-style: italic;
+    text-decoration-line: underline;
+}
+h2{
+    font-size: 29px;
+    text-align: center;
+}
+.contactez-nous {
+    font-family: 'Great Vibes', cursive;
+    font-size: 80px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.form-contact {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+.reseau1{
+    color:  #3b5998;
+    font-size: 40px;
+}
+.reseau2{
+    color:  #bc2a8d;
+    font-size: 40px;
+}
+.reseau3{
+    color:  #00aced;
+    font-size: 40px;
+}
+.card-body1 {
+    text-align: center;
+}
+
+/*    films  */
+small{
+    font-size: 15px;
+}
+strong{
+    color: red;
+}
+/*  inscription */
+label{
+    color: gold;
+}
+.card-deck{
+    margin-top: 20px;
+}
+
+/******** footer ***************/
+.footer-copyright text-center py-3{
+    text-align: left;
+}
+footer {
+    color: gold;
+    background-color: black;
+}
+footer a {
+    color: gold;   
+}
+footer a:hover {
+    color: red;
+}
+.lien1{
+    font-size: 30px;
+    color: #3b5998;
+}
+.lien2{
+    font-size: 30px;
+    color:  #bc2a8d;
+}
+.lien3{
+    font-size: 30px;
+    color:  #00aced;
+}
+h3{
+    text-transform: uppercase;
+    font-family: 'Hind', cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/********** end footer *********/
+
+/******* Actualités*****/
+h5{
+    text-transform: uppercase;
+    font-family: 'Hind', cursive;
+    font-style: italic;
+    font-weight: bold;
+}
+.bg-contact {
+    /*background-image: url("../images/projection.jpg");
+    background-repeat: repeat;
+    background-size: cover;*/
+    background-color: #ff88bb;
+}
+
+.cookie-ban {
+    z-index: 9999;
+    background-color: #b1b6bc;
+    /* opacity: 0.3; */
+    padding: 8px;
+    text-align: center;
+    color: #ffff;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+}
+.cookie-ban button{
+    margin-left:3px;
+}
