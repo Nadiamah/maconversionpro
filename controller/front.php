@@ -7,8 +7,7 @@ function afficherPageAccueil2() {
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
     $template = $twig->load('accueil2.html');
-    echo $template->render(); 
-    
+    echo $template->render();   
 }
 
 
@@ -43,19 +42,19 @@ function afficherPageFilms2() {
     echo $template->render();
 }
 function afficherPageDetailsposts2() {
-    $listComments= getListComments(); 
-var_dump($listComments); die;
+    //$listComments= getListComments(); 
+//var_dump($listComments); die;
     $variables=[
         'listComments'=>$listComments
         
     ];
 
 //var_dump($variables); die;
-    //echo 'ok cest bon je suis à la page details blog post';
+    echo 'ok cest bon je suis à la page details blog post';
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
     $template = $twig->load('detailsposts2.html');
-    echo $template->render($variables);
+    echo $template->render();
 }
 
 
