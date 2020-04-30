@@ -1,0 +1,55 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div id="actualites" class="container">
+    <h1>Mes publications</h1>
+</div>
+<div class="container">
+    <!--<div class="row">
+        <div class="col-6 col-md-4">
+        </div>
+        {% for post in listPosts %}
+        <div class="col-12 col-md-8">
+            <!--<h5>Ma conversion professionnel(Titre du blog)<br>&thinsp;&thinsp;&thinsp;&thinsp;Formation chez Openclassroom (chapô)</h5>
+            <p>date de dernière modification</p>
+            <p>Avant d'entamer une formation suivi dans un centre de formation, je me suis un peu formée en autodidacte au langage de base...</p>-->
+            <!--<p>Id du post <strong>{{ posts.getIdPosts() }}</strong></p>
+                <p>Chapo du post <strong>{{ post.getChapo() }}</strong></p>
+                <p>Contenu du post <strong>{{ post.getDescription() }}</strong></p>
+           
+            
+
+            <ul>
+                <li class="lie">
+                    <button type="button" class="button1"><a href="index.php?action=detailsposts">Suite de l'article</a> 
+                </li>
+            </ul>
+        </div>
+        {% endfor %}
+    </div>-->
+    <div class="row">
+        {% for post in listPosts %}
+        <div class="col-12 col-md-8">
+            <h5>{{ post.getTitle() }}<br><strong>{{ post.getChapo() }}</strong></h5>
+                <p>date de dernière modification : <strong>{{ post.getUpdateDate() }}</strong></p>
+                
+
+             <ul>
+                <li class="lie">
+                    <button type="button" class="button1"><a href="index.php?action=detailsposts&idPost={{ post.getIdUsers() }}">Suite de l'article</a>
+                </li>
+            </ul>
+           
+
+        </div>
+        {% endfor %}
+        
+
+    </div>
+</div>
+{% endblock %}
+
+
+
+                

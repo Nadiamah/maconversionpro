@@ -18,16 +18,17 @@ p{
 /***** Accueil ****/
  .button1 {
     background-color: #b1b6bc;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 5px; 
-    text-align: center;  
-}
-ul li {
-    list-style: none;
+    text-align: center; 
 }
 .button1 a{
     color: black;
     text-align: center;
+
+}
+ul li a .lie  {
+    list-style: none;
 }
 .Mon h5{
     color: red;

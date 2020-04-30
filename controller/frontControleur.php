@@ -1,60 +1,99 @@
 <?php
-require_once 'model/comments.php';
+require_once 'model/Connexion.php';
+require_once 'model/Posts.php';
+require_once 'model/PostsMapper.php';
+require_once 'model/CommentsMapper.php';
+require_once 'model/Comments.php';
+require_once 'model/Users.php';
+require_once 'model/UsersMapper.php';
 
-function afficherPageAccueil2() {
+
+
+function afficherPageAccueil() {
     
-    //echo 'page accueil2';
+    
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
-    $template = $twig->load('accueil2.html');
+    $template = $twig->load('accueil.html');
     echo $template->render();   
 }
 
 
-function afficherPageContact2() {
-    echo 'ok cest bon';
+function afficherPageContact() {
+   
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
-    $template = $twig->load('contact2.html');
+    $template = $twig->load('contact.html');
     echo $template->render();
     
 }
 
-function afficherPagePosts2() {
-    echo 'ok cest bon je suis à la page du posts2';
-    $loader = new \Twig\Loader\FilesystemLoader('view/');
-    $twig = new \Twig\Environment($loader);
-    $template = $twig->load('posts2.html');
-    echo $template->render();
-}
-function afficherPageInscription2() {
-    echo 'ok cest bon je suis à la page d\'inscription2';
-    $loader = new \Twig\Loader\FilesystemLoader('view/');
-    $twig = new \Twig\Environment($loader);
-    $template = $twig->load('inscription2.html');
-    echo $template->render();
-}
-function afficherPageFilms2() {
-    echo 'ok cest bon je suis à la page films2';
-    $loader = new \Twig\Loader\FilesystemLoader('view/');
-    $twig = new \Twig\Environment($loader);
-    $template = $twig->load('films2.html');
-    echo $template->render();
-}
-function afficherPageDetailsposts2() {
-    //$listComments= getListComments(); 
-//var_dump($listComments); die;
-    $variables=[
-        'listComments'=>$listComments
-        
-    ];
+function afficherPagePosts() {
+     // On appelle notre mapper pour récupérer notre liste de posts
+     $postMapper = new PostsMapper();
+     $listPosts  = $postMapper->getListPosts();
 
-//var_dump($variables); die;
-    echo 'ok cest bon je suis à la page details blog post';
+    
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
-    $template = $twig->load('detailsposts2.html');
+    $template = $twig->load('posts.html');
+
+    $tab = [
+        'listPosts'    => $listPosts
+    ];
+    echo $template->render( $tab);
+    //var_dump($listPosts); die;
+}
+function afficherPageInscription() {
+    echo 'ok cest bon je suis à la page d\'inscription';
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('inscription.html');
     echo $template->render();
+}
+function afficherPageFilms() {
+    echo 'ok cest bon je suis à la page films';
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('films.html');
+    echo $template->render();
+}
+function afficherPageDetailsposts() {
+   
+    $id = $_GET['idPost'];
+    $postMapper = new PostsMapper();
+    $currentPost = $postMapper->getPost($id);
+    // On appelle notre mapper pour récupérer notre liste de posts
+    $listPosts  = $postMapper->getListPosts();
+    
+
+   
+    $usersMapper= new UsersMapper();
+    $currentUsers= $usersMapper->getUsers($id);
+    $listUsers= $usersMapper->getListUsers();
+
+    $commentsMapper= new CommentsMapper();
+    $currentComments= $commentsMapper->getComments($id);
+    $listComments= $commentsMapper->getListComments();
+
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('detailsposts.html');
+
+    $tab = [
+        'post'  => $currentPost,
+       'listPosts'    => $listPosts,
+
+        'users'  => $currentUsers,
+        'listUsers' => $listUsers,
+        
+        'comments' => $currentComments,
+        'listComments' => $listComments,
+        
+        
+    ]; //var_dump($listComments);die;
+    echo $template->render($tab);
+   
 }
 
 
