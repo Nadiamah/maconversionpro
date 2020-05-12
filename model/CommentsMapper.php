@@ -12,17 +12,19 @@ class CommentsMapper extends Connexion {
      * Retourne un tableau de posts
      * @return array
      */
-    public function getListComments () {
+    public function getListComments ($id) {
 
         // 1°) Je prépare ma requete SQL
-        $list = $this->getConnexion()->prepare("SELECT * FROM comments");
+        $query = $this->getConnexion()->prepare("SELECT * FROM comments where id_posts=:id ");
+        $query->bindParam(':id', $id, PDO::PARAM_INT);
+        $query->execute();
         //$list->bindParam(':offset', $offset, PDO::PARAM_INT);
 
         // 2°) On execute notre requete préparée
-        $list->execute();
+        
 
         // 3°) On recupère notre résultat mysql dans un tableau
-        $resultDb = $list->fetchAll(PDO::FETCH_ASSOC);
+        $resultDb = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
         $listComment = array(); // Initialisation de notre tableau
@@ -43,15 +45,16 @@ class CommentsMapper extends Connexion {
 
             // 6°) On met l'objet dans notre tableau à retourner
             $listComment[] = $commentsObject;
+            
         }
-
+        //var_dump($listComment); die;
         // 7°) On retourne notre tableau d'objet
         return $listComment;
     }
 
     //Récupere un article en particulier
     public function getComments ($id) {
-        $query = $this->getConnexion()->prepare("SELECT * FROM comments");
+        $query = $this->getConnexion()->prepare("SELECT * FROM comments where id_posts=:id");
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
         $comments = $query->fetch(PDO::FETCH_ASSOC);

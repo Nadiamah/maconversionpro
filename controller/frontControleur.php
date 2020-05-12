@@ -9,6 +9,7 @@ require_once 'model/UsersMapper.php';
 
 
 
+
 function afficherPageAccueil() {
     
     
@@ -17,6 +18,49 @@ function afficherPageAccueil() {
     $template = $twig->load('accueil.html');
     echo $template->render();   
 }
+
+
+
+
+function afficherPageUsers() {
+     // On appelle notre mapper pour récupérer notre liste de posts
+     $postMapper = new PostsMapper();
+     $listPosts  = $postMapper->getListPosts();
+
+    
+
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('users.html');
+    
+    $tab = [
+        'listPosts'    => $listPosts
+    ];
+    echo $template->render( $tab);   
+}
+
+
+
+function afficherPageComments() {
+   
+    // On appelle notre mapper pour récupérer notre liste de posts
+    $commentMapper = new CommentsMapper();
+    $listComments  = $commentMapper->getListComments();
+    
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('comments.html');
+
+    $tab = [
+        
+        'listComment'    => $listComments,
+    
+    ]; //var_dump($listComments); die;
+    echo $template->render( $tab);
+   
+
+}
+
 
 
 function afficherPageContact() {
@@ -44,6 +88,9 @@ function afficherPagePosts() {
     echo $template->render( $tab);
     //var_dump($listPosts); die;
 }
+
+
+
 function afficherPageInscription() {
     echo 'ok cest bon je suis à la page d\'inscription';
     $loader = new \Twig\Loader\FilesystemLoader('view/');
@@ -51,6 +98,10 @@ function afficherPageInscription() {
     $template = $twig->load('inscription.html');
     echo $template->render();
 }
+
+
+
+
 function afficherPageFilms() {
     echo 'ok cest bon je suis à la page films';
     $loader = new \Twig\Loader\FilesystemLoader('view/');
@@ -58,31 +109,34 @@ function afficherPageFilms() {
     $template = $twig->load('films.html');
     echo $template->render();
 }
-function afficherPageDetailsposts() {
-   
-    $id = $_GET['idPost'];
+
+
+
+
+
+function afficherPageDetailsComments() {
+    $id = $_GET['action'];
     $postMapper = new PostsMapper();
     $currentPost = $postMapper->getPost($id);
-    // On appelle notre mapper pour récupérer notre liste de posts
-    $listPosts  = $postMapper->getListPosts();
-    
+    $listPost=$postMapper->getListPosts();
 
-   
     $usersMapper= new UsersMapper();
     $currentUsers= $usersMapper->getUsers($id);
+     // On appelle notre mapper pour récupérer notre liste de users
     $listUsers= $usersMapper->getListUsers();
 
     $commentsMapper= new CommentsMapper();
     $currentComments= $commentsMapper->getComments($id);
+     // On appelle notre mapper pour récupérer notre liste de comments
     $listComments= $commentsMapper->getListComments();
 
     $loader = new \Twig\Loader\FilesystemLoader('view/');
     $twig = new \Twig\Environment($loader);
-    $template = $twig->load('detailsposts.html');
+    $template = $twig->load('detailscomments.html');
 
-    $tab = [
+    $tabl = [
         'post'  => $currentPost,
-       'listPosts'    => $listPosts,
+        'listPost'=>$listPost,
 
         'users'  => $currentUsers,
         'listUsers' => $listUsers,
@@ -90,15 +144,44 @@ function afficherPageDetailsposts() {
         'comments' => $currentComments,
         'listComments' => $listComments,
         
+    ];
+    echo $template->render($tabl);
+}
+
+
+
+
+function afficherPageDetailsposts() {
+   
+    $id = $_GET['idPost'];
+    $postMapper = new PostsMapper();
+    $currentPost = $postMapper->getPost($id);
+    $listPost=$postMapper->getListPosts();
+    
+    $commentMapper = new CommentsMapper();
+    $listComments  = $commentMapper->getListComments($id);
+  
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('detailsposts.html');
+
+    $tab = [
+        'post'  => $currentPost,
+        'listPost'=>$listPost,
+
+        'listComment'    => $listComments,
         
-    ]; //var_dump($listComments);die;
+    ]; //var_dump("<pre>",$tab); die;
     echo $template->render($tab);
    
 }
 
 
-function dafficherPageAccueixxxxssssl() {
-    echo 'ok cest bon';
+function afficherPageToto() {
+    $loader = new \Twig\Loader\FilesystemLoader('view/');
+    $twig = new \Twig\Environment($loader);
+    $template = $twig->load('toto.html');
+    echo $template->render();
 }
 
 

@@ -1,0 +1,67 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div id="actualites" class="container">
+    <!--<h1>Mes publications</h1>-->
+</div>
+<div class="container">
+    <div class="row">      
+        <div class="col-6 col-md-4">
+        </div>
+        
+        <div class="col-12 col-md-8">
+          
+            <!--<h5>Titre du blog<br>&thinsp;&thinsp;&thinsp;&thinsp;Mes débuts dans le développement web (chapô)</h5>
+            <p>Avant d'entamer une formation suivi dans un centre de formation, je me suis un peu formée en autodidacte au langage de base qui sont le html et le css. Petit à petit le développement m'a vraiment intéresser et j'ai par la suite décider de m'inscrire dans un centre de formation afin d'y acquérir les compétences et savoir dont j'ai besoin pour bien débuter dans ce nouveau domaine totalement nouveau pour moi.</p>  
+              
+            <p>Id du post<strong> {{ post.getIdPosts() }}</strong></p>
+            <p>Title<strong> {{ post.getTitle() }}</strong></p>
+            <p>Description<strong> {{ post.getDescription() }}</strong></p>-->
+            
+            
+            <h5><strong>{{ comments.getStatus() }}</strong><br></h5>
+            
+            <p><strong>{{ comments.getIdUsers() }}</strong></p>
+            
+            <p>Auteur :<strong>{{ users.getName() }} {{ users.getLastname() }} {{ users.getStatus() }}</strong><br></p>
+            <p>Listes des commentaires :<br> <strong>{{ comments.getIdComments() }} {{ comments.getDescription() }}</strong><br></p>
+           
+        </div> 
+        
+                 
+    </div>
+</div>
+    <!--<p>Listes des commentaires :<br> <strong>{{ comments.getIdComments() }} {{ comments.getDescription() }}</strong><br></p>-->
+<!--<form>
+    <div class="container-fluid">
+    <div class="form-group">
+        <label class="comment" for="exampleFormControlTextarea1">Laisser un commentaire içi</label>
+        <input type="text" placeholder="Entrer votre commentaire"
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label class="comment" for="exampleFormControlTextarea1">First name</label>  
+          <input type="text" class="form-control" placeholder="First name">
+        </div>
+        <div class="col">
+          <label class="comment" for="exampleFormControlTextarea1">Email</label>  
+          <input type="text" class="form-control" placeholder="Email">
+        </div>
+      </div>  
+    </div>
+    </div>
+    <button type="button" class="button1">Envoyer le commentaire</button>
+</form>-->
+
+{% endblock %}
+
+
+
+
+
+
+
+
+

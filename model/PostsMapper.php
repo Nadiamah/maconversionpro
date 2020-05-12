@@ -26,7 +26,6 @@ class PostsMapper extends Connexion {
 
 
         $listPost = array(); // Initialisation de notre tableau
-
         // 4°) Pour chaque résultat, on boucle sur chaque ligne
         foreach ($resultDb as $key => $dataRow) {
 
@@ -42,11 +41,9 @@ class PostsMapper extends Connexion {
             $postObject->setCreatedDate($dataRow['created_date']);
             $postObject->setStatus($dataRow['status']);
 
-
-
-
             // 6°) On met l'objet dans notre tableau à retourner
             $listPost[] = $postObject;
+            
         }
 
         // 7°) On retourne notre tableau d'objet
@@ -56,10 +53,10 @@ class PostsMapper extends Connexion {
     //Récupere un article en particulier
     public function getPost($id) {
         $query = $this->getConnexion()->prepare("SELECT * FROM posts WHERE id_posts = :id");
+        //$query = $this->getConnexion()->prepare("SELECT * FROM posts");
         $query->bindParam(':id', $id, PDO::PARAM_INT);
         $query->execute();
         $post = $query->fetch(PDO::FETCH_ASSOC);
-
 
         $result = null;
         if ( !empty($post) ) {
@@ -75,11 +72,11 @@ class PostsMapper extends Connexion {
             $postObject->setCreatedDate($post['created_date']);
             $postObject->setStatus($post['status']);
             $result = $postObject;
-        }        
+        }      
         
-        return $result;
-    }
-
+        return $result; 
+    } 
+     
     //Ajoute un article
     public function addArticle($title, $chapo, $content, $id) {
         $add = $this->db->prepare(

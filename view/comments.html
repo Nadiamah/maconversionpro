@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div id="actualites" class="container">
+    <h1>La liste des commentaires</h1>
+</div>
+<div class="container">
+    <div class="row">
+        {% for comment in listComment %}
+        
+
+        <div class="col-6 col-md-4">
+        </div>
+        
+        <div class="col-12 col-md-8">
+     
+            
+            <p>Id du post <strong>{{ comment.getIdPosts() }}</strong></p>
+            <p>Id du comment <strong>{{ comment.getIdUsers() }}</strong></p>
+            <p>Contenu du comment <strong>{{ comment.getDescription() }}</strong></p>
+            <p>date de dernière modification : <strong>{{ comment.getUpdateDate() }}</strong></p>
+            <p>date de dernière création : <strong>{{ comment.getCreatedDate() }}</strong></p>
+            <p>date de dernière publication : <strong>{{ comment.getPublicationDate() }}</strong></p>
+            <p>statue : <strong>{{ comment.getIdPosts() }}</strong></p>
+            
+                
+            <ul>
+                <li class="lie">
+                    <button type="button" class="button1"><a  href="index.php?action=detailscomments&idcomments={{ comment.getIdComments() }}">Suite de l'article</a> 
+                    </li>
+            </ul>
+        </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock %}

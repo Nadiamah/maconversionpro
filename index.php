@@ -24,6 +24,16 @@ if (isset($_GET['action'])) {
         afficherPagePosts();
 
     }
+    elseif ( $_GET['action'] == 'users' ) {
+
+        afficherPageUsers();
+
+    }
+    elseif ( $_GET['action'] == 'comments' ) {
+
+        afficherPageComments();
+
+    }
     elseif ( $_GET['action'] == 'inscription' ) {
 
         afficherPageInscription();
@@ -42,6 +52,15 @@ if (isset($_GET['action'])) {
     elseif ( $_GET['action'] == 'films' ) {
 
         afficherPageFilms();
+
+    }
+    elseif ( $_GET['action'] == 'toto' ) {
+
+        afficherPageToto();
+
+    } elseif ( $_GET['action'] == 'detailscomments' ) {
+
+        afficherPageDetailsComments();
 
     }else {
 
