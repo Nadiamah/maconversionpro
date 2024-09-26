@@ -1,20 +1,19 @@
 <?php
 
 /**
- * Class DetailsPosts
+ * Class Posts
  */
-class Comments {
+class Posts {
 
-    private $id_comments;
+    private $id_posts;
+    private $title;
+    private $chapo;
     private $description;
-    private $created_date;
     private $publication_date;
     private $update_date;
+    private $created_date;
     private $status;
     private $id_users;
-    private $id_posts;
-    
-   
 
 
 
@@ -23,6 +22,21 @@ class Comments {
 
     }
 
+    /**
+     * @return mixed
+     */
+    public function getChapo()
+    {
+        return $this->chapo;
+    }
+
+    /**
+     * @param mixed $chapo
+     */
+    public function setChapo($chapo)
+    {
+        $this->chapo = $chapo;
+    }
 
     /**
      * @return mixed
@@ -54,6 +68,21 @@ class Comments {
     public function setPublicationDate($publication_date)
     {
         $this->publication_date = $publication_date;
+    }
+    /**
+     * @return mixed
+     */
+    public function getCreatedDate()
+    {
+        return $this->created_date;
+    }
+
+    /**
+     * @param mixed $created_date
+     */
+    public function setCreatedDate($created_date)
+    {
+        $this->created_date = $created_date;
     }
 
     /**
@@ -91,17 +120,17 @@ class Comments {
     /**
      * @return mixed
      */
-    public function getIdComments()
+    public function getTitle()
     {
-        return $this->id_comments;
+        return $this->title;
     }
 
     /**
-     * @param mixed $comments
+     * @param mixed $title
      */
-    public function setIdComments($id_comments)
+    public function setTitle($title)
     {
-        $this->id_comments = $id_comments;
+        $this->title = $title;
     }
  /**
      * @return mixed
@@ -118,22 +147,7 @@ class Comments {
     {
         $this->id_users = $id_users;
     }
-    /**
-     * @return mixed
-     */
-    public function getCreatedDate()
-    {
-        return $this->created_date;
-    }
-
-    /**
-     * @param mixed $created_date
-     */
-    public function setCreatedDate($created_date)
-    {
-        $this->created_date = $created_date;
-    }
-/**
+ /**
      * @return mixed
      */
     public function getStatus()
@@ -148,5 +162,13 @@ class Comments {
     {
         $this->status = $status;
     }
+
+
+
+
+
+
+
+
 
 }

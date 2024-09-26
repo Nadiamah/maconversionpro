@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+
+{% block content %}
+
+<div id="actualites" class="container">
+    <!--<h1>Mes publications</h1>-->
+</div>
+<div class="container">    
+  <div class="row">
+      <h5><strong>{{ post.getTitle() }}<br>{{ post.getChapo() }}</strong><br></h5>           
+      <p><strong>{{ post.getDescription() }}</strong></p>           
+      <p>Auteur :<strong>{{ users.getName() }} {{ users.getLastname() }} {{ users.getStatus() }}</strong><br></p>  
+  </div> 
+  <div class="row">
+    <h2>Liste des commentaires: </h2>
+  </div>
+  {% for comment in listComment %}
+  <div class="row"> 
+      <p>Id du post <strong>{{ comment.getIdPosts() }}</strong></p>
+      <p>Id du comment <strong>{{ comment.getIdUsers() }}</strong></p>
+      <p>Contenu du comment <strong>{{ comment.getDescription() }}</strong></p>
+      <p>date de dernière modification : <strong>{{ comment.getUpdateDate() }}</strong></p>
+      <p>date de dernière création : <strong>{{ comment.getCreatedDate() }}</strong></p>
+      <p>date de dernière publication : <strong>{{ comment.getPublicationDate() }}</strong></p>
+      <p>statue : <strong>{{ comment.getIdPosts() }}</strong></p> 
+  </div>
+  {% endfor %}          
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

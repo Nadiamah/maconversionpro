@@ -1,48 +1,66 @@
 <?php
-
 // Le fichier index.php est un routeur
 
 require_once 'vendor/autoload.php';
-require_once 'controller/front.php'; // Inclusion de notre controleur
+require_once 'controller/frontControleur.php'; // Inclusion de notre controleur
+require_once 'model/Connexion.php';
 
 
-
-if (isset($_GET['page'])) {
+if (isset($_GET['action'])) {
 
     // Selon le cas et la valeur de $_GET['page'], on va appeler la bonne fonction définie dans notre Controleur ( controleur/front.php )
 
 
     // Affichage de la page d'accueil
-    if ( $_GET['page'] == 'accueil2' ) {
-        afficherPageAccueil2();
+    if ( $_GET['action'] == 'accueil' ) {
+        afficherPageAccueil();
     }
-    elseif ( $_GET['page'] == 'contact2' ) {
-        afficherPageContact2();
+    elseif ( $_GET['action'] == 'contact' ) {
+        afficherPageContact();
     }
 
-    elseif ( $_GET['page'] == 'posts2' ) {
+    elseif ( $_GET['action'] == 'posts' ) {
 
-        afficherPagePosts2();
-
-    }
-    elseif ( $_GET['page'] == 'inscription2' ) {
-
-        afficherPageInscription2();
+        afficherPagePosts();
 
     }
-    elseif ( $_GET['page'] == 'aproposdemoi' ) {
+    elseif ( $_GET['action'] == 'users' ) {
+
+        afficherPageUsers();
+
+    }
+    elseif ( $_GET['action'] == 'comments' ) {
+
+        afficherPageComments();
+
+    }
+    elseif ( $_GET['action'] == 'inscription' ) {
+
+        afficherPageInscription();
+
+    }
+    elseif ( $_GET['action'] == 'aproposdemoi' ) {
 
         afficherPageAproposdemoi();
 
     }
-    elseif ( $_GET['page'] == 'detailsposts2' ) {
+    elseif ( $_GET['action'] == 'detailsposts' ) {
 
-        afficherPageDetailsposts2();
+        afficherPageDetailsposts();
 
     }
-    elseif ( $_GET['page'] == 'films2' ) {
+    elseif ( $_GET['action'] == 'films' ) {
 
-        afficherPageFilms2();
+        afficherPageFilms();
+
+    }
+    elseif ( $_GET['action'] == 'toto' ) {
+
+        afficherPageToto();
+
+    } elseif ( $_GET['action'] == 'detailscomments' ) {
+
+        afficherPageDetailsComments();
 
     }else {
 
